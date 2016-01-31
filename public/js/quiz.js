@@ -46,17 +46,15 @@
 
         $scope.getStats = function(){
             $http.get('/stats').then(function(err, res){
-                console.log(err);
-                console.log(res);
-                if (err || res.error === true) {
+                if (err || res.data.error === true) {
                     return;
                 }
                 var stats = [];
                 var total = 0;
 
-                for (var i =0; i < res.data.length; i ++){
-                    stats[res.data[i]['_id']] = res.data[i]['total'];
-                    total += res.data[i]['total'];
+                for (var i =0; i < res.data.data.length; i ++){
+                    stats[res.data.data[i]['_id']] = res.data.data[i]['total'];
+                    total += res.data.data[i]['total'];
                 }
 
                 for (var i=0; i < 10; i ++){
