@@ -1054,3 +1054,6 @@ footer a:hover {font-family: 'Georgia', serif; color: #717171; font-size: 14px;}
 .share a, .share {
     font-size:20px;
 }
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}

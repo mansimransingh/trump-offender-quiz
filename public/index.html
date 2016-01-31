@@ -58,24 +58,24 @@
 
             <div  id="wrap" ng-class="{'move':currQuestion >= questions.length || showFeedback === true}">
                 <div class="question" ng-show="currQuestion < questions.length">
-                    <h3>Are you...</h3>
-                    <h1>{{ questions[currQuestion].question }}</h1>
+                    <h3 ng-cloak>Are you...</h3>
+                    <h1 ng-cloak>{{ questions[currQuestion].question }}</h1>
                                 
                     <div class="newsletter_item">
-                        <button class="ans yes" ng-click="selectAnswer(0)" ng-hide="showFeedback">Yes</button>
+                        <button class="ans yes" ng-click="selectAnswer(0)" ng-hide="showFeedback" ng-cloak>Yes</button>
                     </div>
                     <div class="newsletter_item">
-                        <button class="ans no" ng-click="selectAnswer(1)" ng-hide="showFeedback">No</button>
+                        <button class="ans no" ng-click="selectAnswer(1)" ng-hide="showFeedback" ng-cloak>No</button>
                     </div>
 
                     <div class="feedback" ng-show="showFeedback === true">
-                        <p>{{ questions[currQuestion].feedback }}</p>
+                        <p ng-cloak>{{ questions[currQuestion].feedback }}</p>
                     </div>
 
                 </div>
 
                 <div class="question" ng-show="currQuestion == questions.length && questions.length !== 0" >
-                    <h3>You are...</h3>
+                    <h3 >You are...</h3>
                     <h1>the chosen one.</h1>
                     <img src="./images/smug.jpg" style="max-width:100%;max-height:300px;" />
                 </div>
