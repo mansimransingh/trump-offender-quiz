@@ -144,7 +144,7 @@ header nav ul li ul li a.active {color: #b20107;}
 header nav ul li.mobile_only {display: none;}
 
 /* Home */
-.hero {width: 100%; min-width: 1080px; height: 680px; position: relative; overflow: hidden; background: #000;}
+.hero {width: 100%; min-width: 1080px; height: 680px; position: relative; overflow: hidden; background: #000;min-height:60vh;}
 .hero .hero_message {padding-top:30px; width: 531px; height: 264px; background: url(../images/hero_message_bg.png) 0 0 no-repeat; position: absolute; bottom: 50px; left: 20px; margin-left: 0; text-align: center; z-index: 300;}
 .hero .hero_message h1 {font-family: 'Montserrat', sans-serif; font-size: 40px; letter-spacing: .2em; color: #fff; line-height: 50px;}
 .hero .hero_message h1 span {font-family: 'Old Standard TT', serif; font-weight: 400; font-size: 90px; display: block; padding: 25px 0; letter-spacing: 0em;}
@@ -656,9 +656,9 @@ footer a:hover {font-family: 'Georgia', serif; color: #717171; font-size: 14px;}
     .media .press .press_item{ margin: 0 0 10px 0; width: 91%;}
     .twitter_posts .twitter_item{ width: 92%; margin-bottom: 20px;}
 
-    .newsletter_item.title {display: block; margin-bottom: 15px}
-    .newsletter_item {display: block; margin-bottom: 15px;}
-    .newsletter_item a {display: block; margin: 0 auto;}
+    .newsletter_item.title {margin-bottom: 15px}
+    .newsletter_item {margin-bottom: 15px;}
+    .newsletter_item a {margin: 0 auto;}
     
     /* About */
     .internal.about .banner .banner_message{ padding-top: 3%;}
