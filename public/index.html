@@ -25,7 +25,7 @@
 <meta property="og:title" content="SHOW YOUR SUPPORT FOR DONALD J. TRUMP">
 <meta property="og:image" content="https://www.donaldjtrump.com/images/uploads/facebook-banner.jpg">
 </head>
-<body ng-app="quiz">
+<body ng-app="quiz" >
 <div id="wrapper" ng-controller="QuizController">
 <div id="top_container">
 <div id="top_navigation">
@@ -46,7 +46,7 @@
 </header>
 
 <section class="hero">
-    <div class="hero_message" ng-show="currQuestion >= questions.length || showFeedback === true">
+    <div class="hero_message" ng-show="(currQuestion >= questions.length || showFeedback === true) && (currQuestion !== 10)">
         <iframe ng-src="{{ ytUrl }}"  frameborder="0" allowfullscreen width="510" height="224"></iframe>
     </div>
     <div class="hero_image">
@@ -56,16 +56,16 @@
 
 
 
-            <div  id="wrap">
+            <div  id="wrap" ng-class="{'move':currQuestion >= questions.length || showFeedback === true}">
                 <div class="question" ng-show="currQuestion < questions.length">
                     <h3>Are you...</h3>
                     <h1>{{ questions[currQuestion].question }}</h1>
                                 
                     <div class="newsletter_item">
-                        <a href="#" class="ans yes" ng-click="selectAnswer(0)" ng-disabled="showFeedback">Yes</a>
+                        <button class="ans yes" ng-click="selectAnswer(0)" ng-hide="showFeedback">Yes</button>
                     </div>
                     <div class="newsletter_item">
-                        <a href="#" class="ans no" ng-click="selectAnswer(1)" ng-disabled="showFeedback">No</a>
+                        <button class="ans no" ng-click="selectAnswer(1)" ng-hide="showFeedback">No</button>
                     </div>
 
                     <div class="feedback" ng-show="showFeedback === true">
@@ -74,19 +74,25 @@
 
                 </div>
 
+                <div class="question" ng-show="currQuestion == 10" >
+                    <h3>You are...</h3>
+                    <h1>the chosen one.</h1>
+                    <img src="./images/smug.jpg" style="max-width:100%;max-height:300px;" />
+                </div>
+
                 <div class="results" ng-show="currQuestion >= questions.length || showFeedback === true">
-                    <p ng-show="offended === true">Don't take that. Fight back. Share on Twitter</p>
-                    <p ng-show="offended === false">You're the chosen one.</p>
+<!--                     <p ng-show="offended === true">Don't take that. Fight back. Share on Twitter</p>
+                    <p ng-show="offended === false">You're the chosen one.</p> -->
                     
                     <div class="share">
-                        <a class="btn email" href=#>Email</a>
-                        <a class="btn tweet" href=#>Tweet</a>
+                        <a class="btn email" href="https://www.facebook.com/sharer/sharer.php?u=http%3A//didtrumpoffendme.com">Facebook</a> | 
+                        <a class="btn tweet" href="https://twitter.com/home?status=%23BlowMyTrumpet%20%23Trump%20%23USA%20%23USA%20%23USA%20http%3A//didtrumpoffendme.com">Tweet</a>
                     </div>
                 </div>
 
             </div>
 
-    <div id="stats">
+<!--     <div id="stats">
         <dl>
           <dd class="percentage percentage-{{ }}"><span class="text">Reporters</span></dd>
           <dd class="percentage percentage-{{ }}"><span class="text">Iowans</span></dd>
@@ -99,7 +105,7 @@
           <dd class="percentage percentage-{{ }}"><span class="text">Prisoners of war</span></dd>
           <dd class="percentage percentage-{{ }}"><span class="text">Donald Trump</span></dd>
         </dl>
-    </div>
+    </div> -->
 
     </div>
 
@@ -117,6 +123,10 @@
         <a href="http://donate.unhcr.org/gbr/syria/">Donate</a>
     </div>
 </section>
+<div class="disclaimer" style="overflow:scroll;max-width:100%;background:#2B325F;float:left">
+<p style="display:inline;padding:0;margin:0;line-height:13px;color:white;white-space: nowrap;float:left;background:#2B325F">Disclaimer: Not for use in hot tubs. This product is meant for educational purposes only as students are trapped in classes and can't escape. Any resemblance to real, artificial or simulated persons, living or dead, will be news to us. No living animals were harmed in the filming of this book. May arrive in pieces, some assembly required. Dead batteries included. Use only as directed, and we direct you not to use it. No warranty expressed or even gently squeezed. Do not use while operating a motor vehicle or heavy equipment, which suggests a poor future for laptop-based digital maps. Postage will be paid by addressee, and will he ever be surprised. This is not an offer to sell securities, but we certainly hope that won't stop you. Apply only to affected area, but if that looks strange to you, you can apply it to the effected area, too. May be too intense for some viewers, not intense enough for others. Do not stamp, but if you must, stamp gently in your bare feet. Beware of low flying aircraft, even if we can't think of any practical thing to do if you happen to see some. Print or type, or have your mother fill it in. For recreational use only as we don't want you to think we're serious. Do not disturb us any further or they will let us out. All models swear they are over 18 years of age. If condition persists, consult your physician, he needs the work. No user serviceable parts inside; we throw it away and start over. Freshest if eaten before date on carton, which doubles as an appetizer. Subject to change without official notice, or even unofficial notice; we're winging it. Times approximate after 23:59, Dec. 31, 1999. Simulated picture; your new TV should look almost as good. No postage necessary if hand delivered. Please remain seated until the captain replaces the light in the overhead sign. Breaking seal constitutes acceptance of agreement; we'll send a collection agent over immediately. For off-road use only; they'd be nuts to let these loose on the streets. As seen on TV, to the left of the cable box. One size fits all, poorly. Many suitcases look alike, though some look that way uniquely. 100% virgin plastic, and stop snickering. Contents may run if washed in hot water, may crawl if washed in cold water. We have sent the forms which your ex-spouse recommended. Slippery when wet, abrasive when dry. For office use only (we write the football pool numbers in that space). Drop in any mailbox and you'll find it cramped. Edited for television by inserting commercials every 10 minutes and chopping off the sides. Keep cool and dry; live on Mars. Post office will not deliver without postage, obstetricians will not deliver without payment. Return to sender, no forwarding order on file, unable to forward -- keep it, we're sick of it. Not responsible for direct, indirect, incidental or consequential damages, though we do retain rights to any profits you might make. At participating locations only, if you can find them. Penalty for private use, which differs from general use. Follow all directions on the label, and yes, that means wake up at 2 a.m. and take another one. Substantial withdrawal for early penalty. Do not write below this line, and no coffee stains, either. Falling rock, the lesser Frank Lloyd Wright model home. Lost ticket pays maximum rate, which offers better odds than Lotto. Your canceled check is your receipt, fat lot of good it will do you. Place stamp here, not there. This is a parody, and if you are open to offence or are a Donald Trump supporter you should close your tab - we are in no way affiliated with Donald Trump. Avoid contact with skin: levitate. Sanitized for your protection using portable autoclaves. Be sure each item is properly endorsed by a major political party. Your signature is not an admission of guilt, though we'll try and convince the jury otherwise. Slightly higher west of the Mississippi, much higher west of Texas, practically below sea level in Florida. Employees, their families, and any others who might actually care are not eligible. Beware of dog poop. Limited time offer, operators are standing by waiting for their chairs to be delivered. You must be present to win, and you must win to be invited. No passes accepted for this engagement, but the elopement is free. No purchase necessary means it is necessary not to purchase. Processed at URL stamped in code at top of carton. Use only in a well-ventilated area near an emergency room. Keep away from fire or flames or nuclear detonations. Replace with same PostScript type. Look for the union label; it shows the best workmanship. Your contribution may be tax deductible if they don't audit. Some equipment shown is optional, some hasn't even been manufactured, many pieces are plastic simulations. Price does not include tax, title, shipping or content. No Canadian coins except those nifty gold dollars. Not recommended for children of taste. Prerecorded for this time zone by beings from the future. Reproduction strictly prohibited, yet it hasn't prevented population growth. No alcohol, dogs, children or loud shirts. No anchovies that you'll ever be able to detect. Specially packaged for this restaurant by someone with a bottling plant. Absolutely no one will be admitted after start of show if all the seats are filled. Call this toll free number before you dig a hole and trigger a regional blackout. Driver does not carry cash so loan him a quarter if he runs out of gas. Objects in mirror may be closer than they appear, and have big teeth, too. Do not fend, mold, bindle or sputilate. No transfers issued if the server on the other end is busy. Package sold by weight, not by wait. Your mileage may vary if you drive to different places. If any part of this agreement is held to be unenforceable, we'll keep printing it, anyway, since you probably won't find out. Conflicts may have settled during strike. Void where prohibited, taxed, or when your bladder is full. If you do not accept the terms of this agreement you've just wasted several minutes.</p>
+</div>
+
 </div>
 
 <script type="text/javascript" src="./js/angular.min.js"></script>

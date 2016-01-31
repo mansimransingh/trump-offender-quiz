@@ -154,7 +154,9 @@ header nav ul li.mobile_only {display: none;}
 .newsletter {width: 100%; min-width: 1080px; height: 70px; padding-top: 10px; border-top: 4px solid #fff; border-bottom: 4px solid #fff; background: #2b325f; text-align: center;}
 .newsletter_item {display: inline-block; vertical-align: middle; margin-left: -4px;text-align:center;}
 .newsletter_item input[type=email] {padding: 0 35px; height: 80px; width: 295px; background: #101a1f; font-family: 'Old Standard TT', serif; font-style: italic; color: #fff; font-size: 18px;}
-.newsletter_item a {display: block; cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 700; color: #fff; width: 180px; height: 60px; background: url(../images/submit_btn_bg2.jpg) 0 0 no-repeat; line-height: 60px; margin-right: 20px;}
+.newsletter_item a, .newsletter_item button {outline: 0;
+    border: 0;
+    background: none; display: block; cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 700; color: #fff; width: 180px; height: 60px; background: url(../images/submit_btn_bg2.jpg) 0 0 no-repeat; line-height: 60px; margin-right: 20px;}
 .newsletter_item.title {text-align: right; margin-right: 55px;}
 .newsletter_item.title h3 {color: #fff; line-height: 60px;}
 
@@ -1022,10 +1024,33 @@ footer a:hover {font-family: 'Georgia', serif; color: #717171; font-size: 14px;}
     color:white;
         font-family: 'Old Standard TT', serif;
 }
+.cust-wrapper h1 {
+    font-size:6em;
+}
+.cust-wrapper h3 {
+    font-size:3em;
+}
 #wrap {
     max-width:800px;
     margin:0 auto;
+    position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+#wrap.move {
+    position:relative;
+    top:20%;
+      -webkit-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  transform: translateY(0%);
 }
 #wrap p {
     color:white;
+    font-size:24px;
+    margin:10px 0;
+}
+.share a, .share {
+    font-size:20px;
 }
