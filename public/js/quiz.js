@@ -11,7 +11,7 @@
         
         //Defining a route to actually post an answer to the API
         $scope.postAnswer = function(id) {
-            $http.post('/api/answers', {ans: id})
+            $http.post('/api/answer', {ans: id})
                 .success(function(data) {
 
                 })
