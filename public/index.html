@@ -46,7 +46,7 @@
 </header>
 
 <section class="hero none" >
-    <div class="hero_message" ng-show="(currQuestion >= questions.length || showFeedback === true) && (currQuestion !== questions.length)">
+    <div class="hero_message" ng-cloak ng-show="(currQuestion >= questions.length || showFeedback === true) && (currQuestion !== questions.length)">
         <iframe ng-src="{{ ytUrl }}"  frameborder="0" allowfullscreen width="510" height="224"></iframe>
     </div>
     <div class="hero_image">
@@ -80,7 +80,7 @@
                     <img src="./images/smug.jpg" style="max-width:100%;max-height:300px;" />
                 </div>
 
-                <div class="results" ng-show="currQuestion >= questions.length || showFeedback === true">
+                <div class="results" ng-show="currQuestion >= questions.length || showFeedback === true" ng-cloak>
 <!--                     <p ng-show="offended === true">Don't take that. Fight back. Share on Twitter</p>
                     <p ng-show="offended === false">You're the chosen one.</p> -->
                     
