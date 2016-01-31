@@ -26,7 +26,7 @@
         <div class="results" ng-show="currQuestion >= questions.length || showFeedback === true">
             <p ng-show="offended === true">Don't take that. Fight back. Share on Twitter</p>
             <p ng-show="offended === false">You're the chosen one.</p>
-            <iframe ng-src="{{ ytUrl }}" ></iframe>
+            <iframe ng-src="{{ ytUrl }}"  frameborder="0" allowfullscreen></iframe>
             <div class="share">
                 <a class="btn email" href=#>Email</a>
                 <a class="btn tweet" href=#>Tweet</a>
