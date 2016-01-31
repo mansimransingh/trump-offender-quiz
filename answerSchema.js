@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var AnswerSchema = new mongoose.Schema({
-    value: {type: int},
+    value: {type: Number},
     ip: { type: String},
     created_at    : { type: Date }
 });
