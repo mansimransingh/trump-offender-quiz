@@ -37,11 +37,43 @@
             }
         };
 
+
+
         $http.get('./js/quiz_data.json').then(function (quizData) {
             $scope.questions = quizData.data;
             $scope.totalQuestions = $scope.questions.length;
         });
 
+        $scope.getStats = function(){
+            $http.get('/stats', function(err, res){
+                if (err || res.error === true) {
+                    return;
+                }
+                var stats = [];
+                var total = 0;
+
+                for (var i =0; i < res.data.length; i ++){
+                    stats[res.data[i]['_id']] = res.data[i]['total'];
+                    total += res.data[i]['total'];
+                }
+
+                for (var i=0; i < 10; i ++){
+                    if (stats[i]){
+                        stats[i] = parseInt( (stats*100)/total )/ 100;
+                    } else {
+                        stats[i] = 0;
+                    }
+                }
+
+                console.log($scope.stats);
+                console.log($scope.total);
+
+                $scope.stats = stats;
+                $scope.total = total;
+            });
+        };
+
+        $scope.getStats();
 
     }]);
 

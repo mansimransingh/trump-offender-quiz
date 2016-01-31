@@ -63,10 +63,6 @@ app.post('/api/answer', function (req, res) {
      var ans = parseInt(req.body.ans || 0);
      var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 
-     console.log("answer = ");
-     console.log(ans);
-     console.log(ip);
-
      if (typeof ans === "number"){
          // create a todo, information comes from AJAX request from Angular
         Answer.create({
