@@ -56,38 +56,38 @@
             $scope.totalQuestions = $scope.questions.length;
         });
 
-        // $scope.getStats = function(){
-        //     $http.get('/stats').then(function(res){
-        //         if (res.data.error === true) {
-        //             return;
-        //         }
-        //         var stats = [];
-        //         var total = 0;
+        $scope.getStats = function(){
+            $http.get('/stats').then(function(res){
+                if (res.data.error === true) {
+                    return;
+                }
+                var stats = [];
+                var total = 0;
 
-        //         for (var i =0; i < res.data.data.length; i ++){
-        //             stats[res.data.data[i]['_id']] = res.data.data[i]['total'];
-        //             total += res.data.data[i]['total'];
-        //         }
+                for (var i =0; i < res.data.data.length; i ++){
+                    stats[res.data.data[i]['_id']] = res.data.data[i]['total'];
+                    total += res.data.data[i]['total'];
+                }
 
-        //         for (var i=0; i < 10; i ++){
-        //             if (stats[i]){
-        //                 stats[i] = (stats[i]/total*100).toFixed(2);
-        //             } else {
-        //                 stats[i] = 0;
-        //             }
-        //         }
+                for (var i=0; i < 10; i ++){
+                    if (stats[i]){
+                        stats[i] = (stats[i]/total*100).toFixed(2);
+                    } else {
+                        stats[i] = 0;
+                    }
+                }
 
-        //         $scope.stats = stats;
+                $scope.stats = stats;
 
-        //         console.log($scope.stats);
-        //     }, function(err){
-        //         console.log(err);
-        //     }).finally(function(){
-        //         console.log("done");
-        //     });
-        // };
+                console.log($scope.stats);
+            }, function(err){
+                console.log(err);
+            }).finally(function(){
+                console.log("done");
+            });
+        };
 
-        // $scope.getStats();
+        $scope.getStats();
 
     }]);
 
