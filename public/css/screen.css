@@ -550,7 +550,7 @@ footer a:hover {font-family: 'Georgia', serif; color: #717171; font-size: 14px;}
     
     /* Home */
     .internal .banner {overflow: visible;}
-    .hero{ min-width: inherit; height: auto; min-height: 180px;}  
+    .hero{ min-width: inherit; min-height: 180px;}  
     .newsletter{ min-width: inherit; height: auto; padding: 20px 0; border: none;}
     .newsletter_item.title{ margin-right: 0; text-align: center; margin-bottom: 5px; margin-left: 0; display: block;}
     .media{ min-width: inherit; padding: 30px 0 30px;}
