@@ -95,6 +95,25 @@ app.post('/api/answer', function (req, res) {
 //     });
 // });
 
+
+app.get('/stats', function(req, res){
+
+  var agg = [
+    {$group: {
+      _id: "$value",
+      total: {$sum: 1}
+    }}
+  ];
+
+    Answer.aggregate(agg, function(err, logs){
+        if (err) { 
+            console.log(err);
+        }
+
+        console.log(logs);
+      });
+});
+
 // application -------------------------------------------------------------
 app.get('*', function(req, res) {
     res.sendfile('./public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
