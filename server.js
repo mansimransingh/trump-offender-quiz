@@ -8,7 +8,7 @@ var morgan = require('morgan'); // log requests to the console (express4)
 var bodyParser = require('body-parser'); // pull information from HTML POST (express4)
 var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
 
-var Answer = require('answerSchema');
+var Answer = require('./answerSchema');
 
 // configuration =================
 //This needs to be changed to database
