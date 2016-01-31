@@ -59,7 +59,7 @@
 
                 for (var i=0; i < 10; i ++){
                     if (stats[i]){
-                        stats[i] = (stats[i]*100)/total;
+                        stats[i] = parseInt( (stats[i]*100)/total )/ 100;
                     } else {
                         stats[i] = 0;
                     }
