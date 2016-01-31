@@ -104,7 +104,7 @@ app.get('/stats', function(req, res){
 
   var agg = [
     {$group: {
-      q: "$value",
+      _id: "$value",
       total: {$sum: 1}
     }}
   ];
