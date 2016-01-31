@@ -65,11 +65,12 @@
                     }
                 }
 
-                console.log($scope.stats);
-                console.log($scope.total);
-
                 $scope.stats = stats;
                 $scope.total = total;
+                
+
+                console.log($scope.stats);
+                console.log($scope.total);
             });
         };
 
