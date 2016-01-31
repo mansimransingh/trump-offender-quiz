@@ -19,8 +19,8 @@
 
                 })
                 .finally(function(){
-
-                })
+                    $scope.moveProgressBar();
+                });
         };
         $scope.selectAnswer = function(i){
             if (i == 0){
@@ -85,7 +85,7 @@
             }).finally(function(){
                 console.log("done");
 
-                setTimeout(function(){ $scope.moveProgressBar(); }, 1000);
+                // setTimeout(function(){ $scope.moveProgressBar(); }, 1000);
 
             });
         };
