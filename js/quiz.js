@@ -1,50 +1,35 @@
 (function () {
 
-    var app = angular.module('myQuiz', []);
+    var app = angular.module('quiz', []);
 
     app.controller('QuizController', ['$scope', '$http', '$sce', function ($scope, $http, $sce) {
-        //If this is less than number of questions then we know offended.
-        //        $scope.offendedness = 'fine';
-        $scope.questionNumber = 0;
-        $scope.activeQuestion = -1;
-        $scope.activeQuestionAnswered = 0;
 
-        $http.get('quiz_data.json').then(function (quizData) {
-            $scope.myQuestions = quizData.data;
-            $scope.totalQuestions = $scope.myQuestions.length;
-        });
+        $scope.currQuestion = 0;
+        $scope.showFeedback = false;
+        $scope.offended = false;
+        $scope.ytUrl = '';
 
-        $scope.selectAnswer = function (qIndex, aIndex) {
-            var questionState = $scope.myQuestions[qIndex].questionState;
+        $scope.selectAnswer = function(i){
+            if (i == 0){
+                $scope.showFeedback = true;
+                $scope.offended = true;
 
-            if (questionState != 'answered') {
-                $scope.myQuestions[qIndex].selectedAnswer = aIndex;
+                $scope.ytUrl = $sce.trustAsResourceUrl($scope.questions[$scope.currQuestion].url);
+                // do http request to save answer
+            } else {
+                $scope.currQuestion += 1;
 
-                var correctAnswer = $scope.myQuestions[qIndex].offended;
-
-                console.log(aIndex);
-
-                $scope.myQuestions[qIndex].correctAnswer = correctAnswer;
-
-
-                if (aIndex === correctAnswer) {
-                    $scope.myQuestions[qIndex].offendedness = 'offended';
-                    //Something to actually stop the loop
-                } else {
-                    $scope.myQuestions[qIndex].offendedness = 'fine';
+                if ($scope.currQuestion > $scope.questions.length){
+                    $scope.currQuestion -= 1;
                 }
-                $scope.myQuestions[qIndex].questionState = 'answered';
             }
         };
 
-        $scope.isSelected = function (qIndex, aIndex) {
-            return $scope.myQuestions[qIndex].selectedAnswer === aIndex;
-        }
+        $http.get('quiz_data.json').then(function (quizData) {
+            $scope.questions = quizData.data;
+            $scope.totalQuestions = $scope.questions.length;
+        });
 
-        $scope.isOffended = function (qIndex, aIndex) {
-//            return $scope.myQuestions[qIndex].correctAnswer === aIndex;
-             return $scope.myQuestions[qIndex].offendedness === 'offended' && aIndex ===0;
-        }
 
     }]);
 
