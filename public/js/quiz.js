@@ -46,6 +46,7 @@
 
         $scope.getStats = function(){
             $http.get('/stats').then(function(err, res){
+                console.log(err);
                 console.log(res);
                 if (err || res.data.error === true) {
                     return;
