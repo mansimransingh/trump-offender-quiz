@@ -12,12 +12,12 @@
         //Defining a route to actually post an answer to the API
         $scope.postAnswer = function(id) {
             $http.post('/api/answer', {ans: id})
-                .success(function(data) {
+                .then(function(data) {
 
                 })
-                .error(function(data) {
-                    console.log('Error: ' + data);
-                });
+                .finally(function(){
+
+                })
         };
         $scope.selectAnswer = function(i){
             if (i == 0){
@@ -45,7 +45,7 @@
         });
 
         $scope.getStats = function(){
-            $http.get('/stats', function(err, res){
+            $http.get('/stats').then(function(err, res){
                 if (err || res.error === true) {
                     return;
                 }
