@@ -40,9 +40,18 @@
             }
         };
 
-
+        $scope.shuffle = function(o){
+            for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+            return o;
+        };
 
         $http.get('./js/quiz_data.json').then(function (quizData) {
+            var last = quizData.data.pop();
+
+            quizData.data = $scope.shuffle(quizData.data);
+
+            quizData.data.push(last);
+
             $scope.questions = quizData.data;
             $scope.totalQuestions = $scope.questions.length;
         });
