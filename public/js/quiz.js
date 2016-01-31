@@ -45,10 +45,8 @@
         });
 
         $scope.getStats = function(){
-            $http.get('/stats').then(function(err, res){
-                console.log(err);
-                console.log(res);
-                if (err || res.data.error === true) {
+            $http.get('/stats').then(function(res){
+                if (res.data.error === true) {
                     return;
                 }
                 var stats = [];
