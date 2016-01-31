@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html ng-app="myQuiz">
+<html>
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -8,41 +8,31 @@
     <link rel="stylesheet" type="text/css" href="css/quiz.css">
 </head>
 
-<body>
+<body ng-app="quiz">
+    <div ng-controller="QuizController" id="wrapper">
+        <div class="question" ng-show="currQuestion < questions.length">
+            <h3>Are you...</h3>
+            <h1>{{ questions[currQuestion].question }}</h1>
 
-    <div id="myQuiz" ng-controller="QuizController">
-        <h1><span>Has Trump offended you?</span></h1>
-        <div class="progress"></div>
-        <div class="intro {{(activeQuestion>-1)? 'inactive': 'active'}}">
-            <h2>Welcome</h2>
-            <p>Click to begin to test your knowledge of Trump's loveliness</p>
-            <p class="btn" ng-click="activeQuestion = 0">Begin</p>
-        </div>
-        <div class="question             
-            {{$index ===activeQuestion ? 'active':'inactive'}}            
-            {{myQuestion.questionState ==='answered'? 'answered':'unanswered'}}           
-            " ng-repeat="myQuestion in myQuestions">
-            <p class="txt">{{myQuestion.question}}</p>
-            <p class="ans" ng-class="{selected:isSelected($parent.$index,$index),offended:isOffended($parent.$index,$index)
-            }" ng-click="selectAnswer($parent.$index,$index)" ng-repeat="Answer in myQuestions[$index].answers">{{Answer.text}}</p>
-            <div class="feedback">
-                <p>Unlucky! Donald Trump has offended you at some point in your life.</p>
-                <video></video>
-                <div class="btn">Finish</div>
+            <button class="ans yes" ng-click="selectAnswer(0)" ng-disabled="showFeedback">Yes</button>
+            <button class="ans no" ng-click="selectAnswer(1)" ng-disabled="showFeedback">No</button>
+
+            <div class="feedback" ng-show="showFeedback === true">
+                <p>{{ questions[currQuestion].feedback }}</p>
             </div>
+
         </div>
-        <div class="results">
-            <h3>Results</h3>
-            <p>Trump was a bit mean to you this year</p>
-            <p>Don't take that. Fight back. Share on Twitter</p>
+
+        <div class="results" ng-show="currQuestion >= questions.length || showFeedback === true">
+            <p ng-show="offended === true">Don't take that. Fight back. Share on Twitter</p>
+            <p ng-show="offended === false">You're the chosen one.</p>
+            <iframe ng-src="{{ ytUrl }}" ></iframe>
             <div class="share">
                 <a class="btn email" href=#>Email</a>
                 <a class="btn tweet" href=#>Tweet</a>
             </div>
-
         </div>
 
-        <!--        Results onto screen when answered questions-->
     </div>
 
     <script type="text/javascript" src="js/angular.min.js"></script>
