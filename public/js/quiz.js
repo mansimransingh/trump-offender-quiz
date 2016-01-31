@@ -84,7 +84,30 @@
                 console.log(err);
             }).finally(function(){
                 console.log("done");
+
+                setTimeout(function(){ $scope.moveProgressBar(); }, 1000);
+
             });
+        };
+
+        $scope.moveProgressBar = function() {
+            var animationLength = 1000;
+            console.log("moveProgressBar");
+            $('.progress-wrap').each(function(i,v){
+
+                var wrap = $(this);
+                var percent = wrap.data('progress-percent');
+
+                var getPercent = percent/100;
+                var getProgressWrapWidth = wrap.width();
+                var progressTotal = getPercent * getProgressWrapWidth;
+
+
+
+                $(this).children('.progress-bar').first().stop().animate({
+                    left: progressTotal
+                }, animationLength);
+              });
         };
 
         $scope.getStats();

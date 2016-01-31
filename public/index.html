@@ -19,7 +19,7 @@
 <!--[if IE]>
 <script src="/js/html5shiv.js"></script>
 <![endif]-->
-<script data-rocketsrc="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/rocketscript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" ></script>
 
 <meta property="og:title" content="SHOW YOUR SUPPORT FOR DONALD J. TRUMP">
 <meta property="og:image" content="https://www.donaldjtrump.com/images/uploads/facebook-banner.jpg">
@@ -91,23 +91,14 @@
 
             </div>
 
-<!--     <div id="stats">
-        <dl>
-          <dd class="percentage percentage-{{ }}"><span class="text">Reporters</span></dd>
-          <dd class="percentage percentage-{{ }}"><span class="text">Iowans</span></dd>
-          <dd class="percentage percentage-{{ }}"><span class="text">Disabled</span></dd>
-          <dd class="percentage percentage-{{ }}"><span class="text">Muslims</span></dd>
-          <dd class="percentage percentage-{{ }}"><span class="text">Seventh-day Adventist</span></dd>
-          <dd class="percentage percentage-{{ }}"><span class="text">African American</span></dd>
-          <dd class="percentage percentage-{{ }}"><span class="text">Asian</span></dd>
-          <dd class="percentage percentage-{{ }}"><span class="text">Women</span></dd>
-          <dd class="percentage percentage-{{ }}"><span class="text">Prisoners of war</span></dd>
-          <dd class="percentage percentage-{{ }}"><span class="text">Donald Trump</span></dd>
-        </dl>
-    </div> -->
-
+    <div class="stats" style="width:350px;float:right" ng-show="currQuestion >= questions.length || showFeedback === true">
+        <div class="stat" ng-repeat="q in questions">
+            <div class="stat-name">{{ q.short_name }}</div>
+            <div style="display:inline-block" class="progress-wrap progress" data-progress-percent="{{ stats[q.id] }}">
+              <div class="progress-bar progress"></div>
+            </div>
+        </div>
     </div>
-
 
 
 </section>
