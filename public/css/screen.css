@@ -103,6 +103,34 @@ table {border-spacing: 0; border-collapse: collapse;}
 td {text-align: left; font-weight: normal;}
 
 
+
+.progress {
+  width: 150px;
+  height: 12px;
+}
+
+.progress-wrap {
+  background: #B20107;
+  margin: 5px 0;
+  overflow: hidden;
+  position: relative;
+  width:150px;
+}
+.progress-wrap .progress-bar {
+  background: #fff;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+.stat-name {
+    width: 150px;
+    display: inline-block;
+    margin: 5px 0;
+    float: left;
+    text-align: right;
+}
+
+
 /* 7. Framework
 ------------------------------------------------------------------------------*/
 
@@ -649,7 +677,9 @@ footer a:hover {font-family: 'Georgia', serif; color: #717171; font-size: 14px;}
 }
 
 @media screen and (max-width: 480px)/* max-width 480px, Only for mobile device */{
-    
+    .stats {
+        display:none;
+    }
     .hero .hero_message {display: none;}
     .hero .hero_message h1 span{ font-size: 30px;}
     .hero .hero_message h1{ line-height: 33px; font-size: 18px;}
@@ -1056,30 +1086,4 @@ footer a:hover {font-family: 'Georgia', serif; color: #717171; font-size: 14px;}
 }
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
-}
-
-.progress {
-  width: 150px;
-  height: 12px;
-}
-
-.progress-wrap {
-  background: #B20107;
-  margin: 5px 0;
-  overflow: hidden;
-  position: relative;
-  width:150px;
-}
-.progress-wrap .progress-bar {
-  background: #fff;
-  left: 0;
-  position: absolute;
-  top: 0;
-}
-.stat-name {
-    width: 150px;
-    display: inline-block;
-    margin: 5px 0;
-    float: left;
-    text-align: right;
 }
