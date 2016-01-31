@@ -46,6 +46,8 @@
 
         $scope.getStats = function(){
             $http.get('/stats').then(function(err, res){
+                console.log(err);
+                console.log(res);
                 if (err || res.error === true) {
                     return;
                 }
@@ -67,7 +69,8 @@
 
                 $scope.stats = stats;
                 $scope.total = total;
-
+                console.log(stats);
+                console.log(total);
 
                 console.log($scope.stats);
                 console.log($scope.total);
