@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Blow my Trumpet</title>
+<meta name='keywords' content=''/>
+<meta name='description' content="" />
+
+<link rel='canonical' href='https://www.donaldjtrump.com'/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="/favicon.ico?v=1.1">
+<link rel="stylesheet" href="./css/screen.css" type="text/css"/>
+
+
+<script async data-rocketsrc="/js/loadCSS.js" type="text/rocketscript"></script>
+<script type="text/rocketscript">
+  loadCSS("//fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic,700|Montserrat:400,700");
+</script>
+<noscript><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic,700|Montserrat:400,700" type="text/css"/></noscript>
+<!--[if IE]>
+<script src="/js/html5shiv.js"></script>
+<![endif]-->
+<script data-rocketsrc="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/rocketscript"></script>
+
+<meta property="og:title" content="SHOW YOUR SUPPORT FOR DONALD J. TRUMP">
+<meta property="og:image" content="https://www.donaldjtrump.com/images/uploads/facebook-banner.jpg">
+</head>
+<body ng-app="quiz">
+<div id="wrapper" ng-controller="QuizController">
+<div id="top_container">
+<div id="top_navigation">
+
+</div>
+</div>
+<header>
+<div class="container">
+<div class="brand">
+
+</div>
+
+<nav>
+
+</nav>
+<br class="clear">
+</div>
+</header>
+
+<section class="hero">
+    <div class="hero_message" ng-show="currQuestion >= questions.length || showFeedback === true">
+        <iframe ng-src="{{ ytUrl }}"  frameborder="0" allowfullscreen width="510" height="224"></iframe>
+    </div>
+    <div class="hero_image">
+            <img src="./images/hero_image_main_2.jpg" alt="Trump Banner">
+    </div>
+    <div class="cust-wrapper">
+
+
+
+            <div  id="wrap">
+                <div class="question" ng-show="currQuestion < questions.length">
+                    <h3>Are you...</h3>
+                    <h1>{{ questions[currQuestion].question }}</h1>
+                                
+                    <div class="newsletter_item">
+                        <a href="#" class="ans yes" ng-click="selectAnswer(0)" ng-disabled="showFeedback">Yes</a>
+                    </div>
+                    <div class="newsletter_item">
+                        <a href="#" class="ans no" ng-click="selectAnswer(1)" ng-disabled="showFeedback">No</a>
+                    </div>
+
+                    <div class="feedback" ng-show="showFeedback === true">
+                        <p>{{ questions[currQuestion].feedback }}</p>
+                    </div>
+
+                </div>
+
+                <div class="results" ng-show="currQuestion >= questions.length || showFeedback === true">
+                    <p ng-show="offended === true">Don't take that. Fight back. Share on Twitter</p>
+                    <p ng-show="offended === false">You're the chosen one.</p>
+                    
+                    <div class="share">
+                        <a class="btn email" href=#>Email</a>
+                        <a class="btn tweet" href=#>Tweet</a>
+                    </div>
+                </div>
+
+            </div>
+
+    </div>
+
+
+
+</section>
+<section class="newsletter">
+    <div class="newsletter_item title">
+        <h3>Show your Support for Donald Trump</h3>
+    </div>
+    <div class="newsletter_item">
+        <a href="https://donate.oxfam.org.uk/emergency/syria">Join Us</a>
+    </div>
+    <div class="newsletter_item">
+        <a href="http://donate.unhcr.org/gbr/syria/">Donate</a>
+    </div>
+</section>
+</div>
+
+<script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/quiz.js"></script>
+
+</body>
+</html>

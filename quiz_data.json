@@ -2,51 +2,51 @@
     {
         "question": "a reporter?",
         "feedback": "If you are a reporter, Donald Trump was a mean grumpy scrooge to you.",
-        "url":"../images/disabled.gif"
+        "url":"https://www.youtube.com/embed/a5wBY6D7V34?autoplay=1&rel=0"
     },
     {
         "question": "from Iowa?",
         "feedback": "Wow, didn't expect that. But yeah, Trump hates you too.",
-        "url": "https://www.youtube.com/watch?v=PRUc11fPAwk"
+        "url": "https://www.youtube.com/embed/PRUc11fPAwk?autoplay=1&rel=0"
     },
     {
         "question": "disabled?",
         "feedback": "If you are disabled, Donald Trump was a nightmare to you.",
-         "url": "../images/disabled.gif"
+         "url": "https://www.youtube.com/embed/a5wBY6D7V34?autoplay=1&rel=0"
     },
     {
         "question": "Muslim?",
         "feedback": "Yeah, you're banned from the US if he gets in power. Sorry.",
-        "url": "https://www.youtube.com/watch?v=MEewj5BJ9UI"
+        "url": "https://www.youtube.com/embed/MEewj5BJ9UI?autoplay=1&rel=0"
     },
     {
         "question": "a Seventh-day Adventist?",
         "feedback": "Oh. OK. But yeah Trump isn't a fan",
-        "url":"https://www.youtube.com/watch?v=i2sb78ocimY"
+        "url":"https://www.youtube.com/embed/i2sb78ocimY?autoplay=1&rel=0"
     },
     {
         "question": "African American?",
         "feedback": "This guy is ridiculous. He wants you bomb you",
-        "url": "https://www.youtube.com/watch?v=k8TwRmX6zs4"
+        "url": "https://www.youtube.com/embed/k8TwRmX6zs4?autoplay=1&rel=0"
     },
     {
         "question": "Asian?",
         "feedback": "What a dick seriously. Donald Trump sucks. Here's what he had to say:",
-        "url":"https://www.youtube.com/watch?v=1B8CvtA2Uvw"
+        "url":"https://www.youtube.com/embed/1B8CvtA2Uvw?autoplay=1&rel=0"
     },
     {
         "question": "a woman?",
         "feedback": "Donald Trump thinks that women have nothing to say.",
-        "url":"https://www.youtube.com/watch?v=dDmb4pd3VNQ"
+        "url":"https://www.youtube.com/embed/dDmb4pd3VNQ?autoplay=1&rel=0"
     },
     {
         "question": "a Prisoner of War?",
         "feedback": "Donald Trump hates you and thinks your worthless and useless.",
-        "url":"https://www.youtube.com/watch?v=oLWaoMCUg0g"
+        "url":"https://www.youtube.com/embed/oLWaoMCUg0g?autoplay=1&rel=0"
     },
     {
         "question": "someone called 'Donald Trump'?",
         "feedback": "Yeah, at some point, you offended yourself.",
-        "url":"https://www.youtube.com/watch?v=a5wBY6D7V34"
+        "url":"https://www.youtube.com/embed/a5wBY6D7V34?autoplay=1&rel=0"
     }
 ]
