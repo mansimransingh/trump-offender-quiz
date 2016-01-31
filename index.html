@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html ng-app="myQuiz">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test Your Knowledge: Saturn</title>
+    <link rel="stylesheet" type="text/css" href="css/quiz.css">
+</head>
+
+<body>
+
+    <div id="myQuiz" ng-controller="QuizController">
+        <h1><span>Has Trump offended you?</span></h1>
+        <div class="progress"></div>
+        <div class="intro {{(activeQuestion>-1)? 'inactive': 'active'}}">
+            <h2>Welcome</h2>
+            <p>Click to begin to test your knowledge of Trump's loveliness</p>
+            <p class="btn" ng-click="activeQuestion = 0">Begin</p>
+        </div>
+        <div class="question             
+            {{$index ===activeQuestion ? 'active':'inactive'}}            
+            {{myQuestion.questionState ==='answered'? 'answered':'unanswered'}}           
+            " ng-repeat="myQuestion in myQuestions">
+            <p class="txt">{{myQuestion.question}}</p>
+            <p class="ans" ng-class="{selected:isSelected($parent.$index,$index),offended:isOffended($parent.$index,$index)
+            }" ng-click="selectAnswer($parent.$index,$index)" ng-repeat="Answer in myQuestions[$index].answers">{{Answer.text}}</p>
+            <div class="feedback">
+                <p>Unlucky! Donald Trump has offended you at some point in your life.</p>
+                <video></video>
+                <div class="btn">Finish</div>
+            </div>
+        </div>
+        <div class="results">
+            <h3>Results</h3>
+            <p>Trump was a bit mean to you this year</p>
+            <p>Don't take that. Fight back. Share on Twitter</p>
+            <div class="share">
+                <a class="btn email" href=#>Email</a>
+                <a class="btn tweet" href=#>Tweet</a>
+            </div>
+
+        </div>
+
+        <!--        Results onto screen when answered questions-->
+    </div>
+
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/quiz.js"></script>
+</body>
+
+</html>
