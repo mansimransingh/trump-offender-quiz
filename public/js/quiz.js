@@ -26,7 +26,7 @@
 
                 $scope.ytUrl = $sce.trustAsResourceUrl($scope.questions[$scope.currQuestion].url);
                 // do http request to save answer
-                $scope.postAnswer(i);
+                $scope.postAnswer(currQuestion);
                 
             } else {
                 $scope.currQuestion += 1;
