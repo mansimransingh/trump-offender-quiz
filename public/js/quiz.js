@@ -4,38 +4,21 @@
 
     app.controller('QuizController', ['$scope', '$http', '$sce', function ($scope, $http, $sce) {
 
-<<<<<<< Updated upstream:js/quiz.js
         $scope.currQuestion = 0;
         $scope.showFeedback = false;
         $scope.offended = false;
         $scope.ytUrl = '';
-=======
-        $http.get('quiz_data.json').then(function (quizData) {
-            $scope.myQuestions = quizData.data;
-            $scope.totalQuestions = $scope.myQuestions.length;
-        });
-        
         
         //Defining a route to actually post an answer to the API
-        $scope.postAnswer = function() {
-        $http.post('/api/answers', $scope.formData)
-            .success(function(data) {
-                $scope.formData = {}; // clear the form so our user is ready to enter another
-                $scope.questions = data;
-                console.log(data);
-            })
-            .error(function(data) {
-                console.log('Error: ' + data);
-            });
-    };
+        $scope.postAnswer = function(id) {
+            $http.post('/api/answers', {ans: id})
+                .success(function(data) {
 
-        $scope.selectAnswer = function (qIndex, aIndex) {
-            var questionState = $scope.myQuestions[qIndex].questionState;
-
-            if (questionState != 'answered') {
-                $scope.myQuestions[qIndex].selectedAnswer = aIndex;
->>>>>>> Stashed changes:public/quiz.js
-
+                })
+                .error(function(data) {
+                    console.log('Error: ' + data);
+                });
+        };
         $scope.selectAnswer = function(i){
             if (i == 0){
                 $scope.showFeedback = true;
@@ -43,6 +26,8 @@
 
                 $scope.ytUrl = $sce.trustAsResourceUrl($scope.questions[$scope.currQuestion].url);
                 // do http request to save answer
+                $scope.postAnswer(i);
+                
             } else {
                 $scope.currQuestion += 1;
 
@@ -52,7 +37,7 @@
             }
         };
 
-        $http.get('quiz_data.json').then(function (quizData) {
+        $http.get('./js/quiz_data.json').then(function (quizData) {
             $scope.questions = quizData.data;
             $scope.totalQuestions = $scope.questions.length;
         });
