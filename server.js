@@ -112,9 +112,12 @@ app.get('/stats', function(req, res){
     Answer.aggregate(agg, function(err, logs){
         if (err) { 
             console.log(err);
+            res.json({error:true});
+            return;
         }
 
-        console.log(logs);
+        res.json({error: false, data:logs });
+
       });
 });
 
